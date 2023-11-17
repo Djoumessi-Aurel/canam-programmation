@@ -1,0 +1,11 @@
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS "dessins";
+CREATE TABLE IF NOT EXISTS "dessins" (
+	"id"	INTEGER NOT NULL,
+	"nom"	TEXT NOT NULL,
+	"date_creation"	TEXT NOT NULL,
+	"date_modification"	TEXT NOT NULL,
+	"data"	BLOB NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+COMMIT;
