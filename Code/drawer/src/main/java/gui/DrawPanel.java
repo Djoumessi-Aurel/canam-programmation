@@ -69,17 +69,19 @@ public class DrawPanel extends JPanel {
                 int newX = (int)(mouseX/scale);
                 int newY = (int)(mouseY/scale);
 
-                if(Appli.isMovingShape && Appli.selectedIndex != -1){
+                if(Appli.isMovingShape && Appli.selectedIndex != -1){ // Déplacement de la forme
                     CenteredShape shape =  (CenteredShape)Appli.shapeList.get(Appli.selectedIndex);
                     shape.setXCentre(newX);
                     shape.setYCentre(newY);
+
+                    Appli.afterEdition(); // Le déplacement de forme est une modification
 
                     Appli.isMovingShape = false;
                     // Appli.selectedIndex = -1;
                     MainWindow.checkIfFormeSelectionnee();
                 }
 
-                if(Appli.isCreatingShape){
+                if(Appli.isCreatingShape){ // Création d'une forme
                     Appli.isCreatingShape = false;
                     Appli.creatingShape.callShapeCreation(newX, newY);
                     Appli.selectedIndex = -1;

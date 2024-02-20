@@ -22,7 +22,7 @@ public abstract class Shape implements Serializable {
     public abstract double getPerimetre();
     public abstract double getAire();
 
-    public abstract void callShapeCreation(int x, int y);
+    public abstract void callShapeCreation(int x, int y);  // Déclenche la création de la forme dans la zone de dessin
 
     public void drawSimple(Graphics g) {
         Graphics2D g2d = (Graphics2D) g.create(); // Crée une copie du contexte graphique

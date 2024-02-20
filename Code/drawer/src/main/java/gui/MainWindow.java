@@ -408,15 +408,15 @@ public class MainWindow extends JFrame {
             putValue( Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0) ); 
         }
         
-        @Override public void actionPerformed( ActionEvent e ) {
+        @Override public void actionPerformed( ActionEvent e ) { // Suppression de forme
             if(Appli.selectedIndex != -1){
                     Appli.shapeList.remove(Appli.selectedIndex);
+
+                    Appli.afterEdition(); // La suppression de forme est une modification
 
                     Appli.selectedIndex = -1;
                     Appli.hoveredIndex = -1;
                     MainWindow.checkIfFormeSelectionnee();
-
-                    drawingPanel.repaint();
                 }
         }
     };
